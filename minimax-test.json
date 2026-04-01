@@ -1,0 +1,6 @@
+{
+  "model": "MiniMax-Text-01",
+  "messages": [
+    {"role": "user", "content": "Hello, are you MiniMax?"}
+  ]
+}
