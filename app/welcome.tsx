@@ -63,10 +63,11 @@ export default function Welcome() {
           <Text style={styles.logoPlus}>+</Text>
           <Text style={styles.logoText}>PLUS ONE</Text>
         </View>
-        <Text style={styles.heroTitle}>Knoxville. No bots. No fakes.</Text>
+        <Text style={styles.heroTitle}>What if your city had a brain?</Text>
         <Text style={styles.heroSubtitle}>
-          Real people, real events, real plans. Find what's happening tonight and the
-          person worth going with.
+          Facebook without the noise. Tinder without the wasted swipes. LinkedIn that
+          doesn't take itself too seriously. VisitKnoxville that actually knows you. Real
+          Knoxvillians, real spots, and a killer app that connects them like never before.
         </Text>
 
         <View style={styles.heroActions}>
@@ -123,9 +124,24 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>03</Text>
           </View>
           <View style={styles.pitchTextWrap}>
+            <Text style={styles.pitchHeader}>An AI trained on Knoxville</Text>
+            <Text style={styles.pitchBody}>
+              The killer app: a frontier-level AI that knows every venue, every event,
+              every special, every hidden corner of Knoxville. Ask it where to take your
+              parents, what's open late on a Wednesday, or how to spend a free Saturday —
+              it knows.
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.pitchRow}>
+          <View style={styles.pitchIcon}>
+            <Text style={styles.pitchNum}>04</Text>
+          </View>
+          <View style={styles.pitchTextWrap}>
             <Text style={styles.pitchHeader}>Built to help you leave the app</Text>
             <Text style={styles.pitchBody}>
-              No infinite feeds. No streaks. No "you have 3 hot matches expiring." Plus One
+              No infinite feeds. No streaks. No "3 hot matches expiring soon." Plus One
               shows you what's happening, helps you make a plan, and gets out of your way.
             </Text>
           </View>
@@ -256,20 +272,20 @@ const styles = StyleSheet.create({
     letterSpacing: 4,
   },
   heroTitle: {
-    fontSize: 32,
+    fontSize: 34,
     fontWeight: '900',
     color: '#FFE4D2',
-    marginBottom: 12,
+    marginBottom: 14,
     textAlign: 'center',
-    lineHeight: 38,
-    maxWidth: 320,
+    lineHeight: 40,
+    maxWidth: 380,
   },
   heroSubtitle: {
     fontSize: 15,
-    color: 'rgba(255,228,210,0.7)',
+    color: 'rgba(255,228,210,0.78)',
     textAlign: 'center',
-    lineHeight: 22,
-    maxWidth: 320,
+    lineHeight: 23,
+    maxWidth: 420,
     marginBottom: 28,
   },
   heroActions: { flexDirection: 'row', gap: 10, marginBottom: 24 },
