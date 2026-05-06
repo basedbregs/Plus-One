@@ -1,0 +1,173 @@
+{
+  "lastUpdated": "2026-04-17T22:00:00Z",
+  "claudeStatus": {
+    "current": "Architecting the AI Concierge: profile-building quiz + community channels + recommendation engine.",
+    "blockedOn": "Domain pick + secrets + logo pick",
+    "icon": "working"
+  },
+  "currentFocus": {
+    "title": "Plus One = AI Concierge for Knoxville's Cool Crowd",
+    "description": "Locked 2026-04-17 (evening): The product is a concierge that figures out what you want even when you don't. Quiz + behavior + linked socials -> deep profile -> AI recommends events, people, food, communities, plans. Reddit-style channels are home base. Members-only feel. Ticket-themed brand.",
+    "vision": [
+      "Don't make users think — quiz them lightly, learn from every tap",
+      "Every interaction (tap, RSVP, +1, dismiss) feeds the profile",
+      "AI recommends WHO to go WITH not just WHERE to go",
+      "Channels (Reddit-style) for UTK football, Old City nightlife, foodies, etc.",
+      "Plans the whole night: dinner -> event -> drinks, with people",
+      "Members-only vibe: invite welcomed, ID-verified, social-linked"
+    ],
+    "buildPhases": [
+      {"phase": "P1: Foundation", "items": [
+        "Schema: preferences, interactions, communities, posts, votes, rsvps",
+        "Onboarding quiz (replaces resume builder)",
+        "Save/RSVP buttons on event cards",
+        "Track every tap as interaction signal"
+      ]},
+      {"phase": "P2: Communities", "items": [
+        "Create + join channels",
+        "Post in channels (text/image/event-link)",
+        "Threaded comments + voting",
+        "Auto-suggest channels from profile"
+      ]},
+      {"phase": "P3: Data ingestion", "items": [
+        "FB Events (Apify, deployed) — needs token",
+        "Eventbrite (need API key)",
+        "VisitKnoxville scraper",
+        "UTK iCal feed",
+        "Reddit r/Knoxville + r/UTK",
+        "RSS: Knox News, WBIR, WATE, WVLT, Compass Knox"
+      ]},
+      {"phase": "P4: AI Concierge", "items": [
+        "Vector embeddings of all events + content (pgvector)",
+        "Tool-calling Claude for chat",
+        "‘Plan my night’ flow: weather + prefs + events + food",
+        "+1 recommendation engine: who matches for THIS event",
+        "Post-event feedback loop"
+      ]}
+    ],
+    "milestones": [
+      {"title": "Database schema for AI concierge", "status": "in_progress"},
+      {"title": "Onboarding quiz UI", "status": "pending"},
+      {"title": "Save/RSVP on event cards", "status": "pending"},
+      {"title": "Communities feature", "status": "pending"},
+      {"title": "Multi-source data ingestion", "status": "pending"},
+      {"title": "AI concierge chat", "status": "pending"}
+    ]
+  },
+  "humanTodos": [
+    {
+      "id": "logo-pick",
+      "title": "Pick a logo direction (1-6)",
+      "description": "See http://localhost:4444/dashboard/logo-options.html. I recommend #4 (Premium Pill) for app icon + #6 (Stamped Stub) for in-app member-card vibe.",
+      "priority": "high",
+      "checked": false,
+      "url": "http://localhost:4444/dashboard/logo-options.html"
+    },
+    {
+      "id": "domain-pick",
+      "title": "Pick a domain",
+      "description": "plusoneknoxville.com or knoxplusone.com (both .com, $11.25/yr). Or want me to chase down plusoneknox.com owner?",
+      "priority": "high",
+      "checked": false
+    },
+    {
+      "id": "secrets-setup",
+      "title": "Run Chrome MCP secrets prompt",
+      "description": "Apify token + Google Places key + Supabase service_role key.",
+      "priority": "high",
+      "checked": false,
+      "prompt": "See the latest 'Here's the updated prompt' message in the Claude chat. It contains 6 tasks for Claude in Chrome to set up Apify, Google Places, and Supabase secrets."
+    },
+    {
+      "id": "anthropic-api-key",
+      "title": "Get an Anthropic API key (for AI concierge)",
+      "description": "Plus One's chat brain. Sign up at console.anthropic.com.",
+      "priority": "high",
+      "checked": false,
+      "url": "https://console.anthropic.com/"
+    },
+    {
+      "id": "github-repo",
+      "title": "Create GitHub repo + share URL",
+      "description": "Empty private repo. Then I push code, open PRs you review.",
+      "priority": "high",
+      "checked": false,
+      "url": "https://github.com/new"
+    },
+    {
+      "id": "eventbrite-api-key",
+      "title": "Get an Eventbrite API token (free)",
+      "description": "Major event source. eventbrite.com/platform/api-keys.",
+      "priority": "medium",
+      "checked": false,
+      "url": "https://www.eventbrite.com/platform/api-keys"
+    },
+    {
+      "id": "yelp-api-key",
+      "title": "Get a Yelp Fusion API key (free)",
+      "description": "Restaurant recs for the AI concierge. 5K calls/day free.",
+      "priority": "medium",
+      "checked": false,
+      "url": "https://www.yelp.com/developers/v3/manage_app"
+    },
+    {
+      "id": "mapbox-account",
+      "title": "Create a Mapbox account + token",
+      "description": "Free 50K loads/month.",
+      "priority": "medium",
+      "checked": false,
+      "url": "https://account.mapbox.com/auth/signup"
+    },
+    {
+      "id": "llc-decision",
+      "title": "File LLC (or wait)",
+      "description": "TN LLC, ~$300 at tnbear.tn.gov.",
+      "priority": "low",
+      "checked": false,
+      "url": "https://tnbear.tn.gov"
+    }
+  ],
+  "openQuestions": [
+    {
+      "id": "logo-pick-q",
+      "question": "Which logo (1-6)?",
+      "context": "See http://localhost:4444/dashboard/logo-options.html"
+    },
+    {
+      "id": "domain-q",
+      "question": "Domain: plusoneknoxville.com or knoxplusone.com?",
+      "context": "Both $11.25, both .com. plusoneknox.com is taken."
+    },
+    {
+      "id": "members-only-mechanic",
+      "question": "Members-only: real invite-only (true exclusivity) or just members-only VIBE (anyone can apply)?",
+      "context": "Real invite-only = harder growth. Vibe-only = easier growth, same psychology if marketed well."
+    },
+    {
+      "id": "social-linking",
+      "question": "Social linking: Instagram + X required at signup, optional, or post-onboarding nudge?",
+      "context": "Required = more trust + better profile. Optional = less friction. Post-onboarding nudge = best of both."
+    }
+  ],
+  "recentlyCompleted": [
+    {"title": "Refined welcome page for exclusive/members-only vibe", "when": "Apr 17"},
+    {"title": "Mocked 6 ticket-style logo options", "when": "Apr 17"},
+    {"title": "Audited existing UI inventory", "when": "Apr 17"},
+    {"title": "Re-seeded events with future dates + photos", "when": "Apr 17"},
+    {"title": "Added image support to event cards", "when": "Apr 17"},
+    {"title": "Built browse-before-signup welcome page", "when": "Apr 17"},
+    {"title": "Locked vision: AI Concierge for Knoxville's cool crowd", "when": "Apr 17"},
+    {"title": "Built orchestrator dashboard", "when": "Apr 17"},
+    {"title": "Built Apify Facebook Events scraper + cron", "when": "Apr 17"},
+    {"title": "Built MVP: auth, onboarding, discover, openings, matching, chat", "when": "Apr 12"}
+  ],
+  "criticalNotes": [
+    "Vision: AI Concierge + members-only social platform for Knoxville",
+    "Data split: User does Apify (FB events + X). Claude handles all other sources.",
+    "Supabase project ID: utoykngdauuglqttjlvw",
+    "Dashboard: http://localhost:4444/dashboard/dashboard.html",
+    "Logos: http://localhost:4444/dashboard/logo-options.html",
+    "App: http://localhost:8081/welcome",
+    "Test accounts: test@utk.edu / test1234, test2@utk.edu / test1234"
+  ]
+}

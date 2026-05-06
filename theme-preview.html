@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plus One - Theme Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f0f0; padding: 24px; }
+  h1 { text-align: center; margin-bottom: 24px; color: #333; font-size: 22px; }
+  .grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .phone { width: 320px; height: 640px; border-radius: 32px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); position: relative; flex-shrink: 0; }
+  .phone-label { text-align: center; margin-top: 12px; font-weight: 700; font-size: 14px; color: #555; }
+  .screen { height: 100%; overflow-y: auto; }
+  .header { padding: 48px 16px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .header h2 { font-size: 22px; font-weight: 800; }
+  .filter-row { display: flex; gap: 6px; padding: 0 16px 10px; overflow-x: auto; }
+  .chip { padding: 6px 12px; border-radius: 16px; font-size: 11px; font-weight: 600; white-space: nowrap; border: 1px solid; }
+  .count { padding: 8px 16px; font-size: 15px; font-weight: 700; }
+  .card { margin: 0 16px 10px; border-radius: 14px; overflow: hidden; }
+  .card-img { width: 100%; height: 100px; object-fit: cover; display: block; background-size: cover; }
+  .img-park { background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 40%, #66BB6A 70%, #2E7D32 100%); position: relative; }
+  .img-park::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(transparent, rgba(0,0,0,0.15)); }
+  .img-music { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #e94560 70%, #ff6b6b 100%); position: relative; }
+  .img-music::after { content: ''; position: absolute; top: 30%; left: 20%; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; box-shadow: 30px -10px 0 #FFD700, 60px 5px 0 #FF6B35, 90px -8px 0 #FFD700, 120px 3px 0 #FF6B35, 150px -5px 0 #FFD700; }
+  .img-library { background: linear-gradient(135deg, #8D6E63 0%, #A1887F 30%, #D7CCC8 60%, #BCAAA4 100%); position: relative; }
+  .img-library::after { content: ''; position: absolute; bottom: 15px; left: 15px; right: 15px; height: 3px; background: rgba(255,255,255,0.3); box-shadow: 0 -8px 0 rgba(255,255,255,0.2), 0 -16px 0 rgba(255,255,255,0.15), 0 -24px 0 rgba(255,255,255,0.1); }
+  .card-body { padding: 12px 14px 14px; }
+  .card-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .card-detail { font-size: 11px; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; }
+  .card-detail .dot { width: 3px; height: 3px; border-radius: 50%; }
+  .card-footer { border-top: 1px solid; margin-top: 10px; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card-cta { font-size: 12px; font-weight: 600; }
+  .tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 68px; display: flex; align-items: center; justify-content: space-around; padding-bottom: 12px; border-top: 1px solid; }
+  .tab { text-align: center; font-size: 9px; font-weight: 600; }
+  .tab-icon { font-size: 20px; margin-bottom: 2px; }
+
+  /* ============ THEME 1: Clean White ============ */
+  .t1 .screen { background: #FFFFFF; }
+  .t1 .header h2 { color: #1a1a1a; }
+  .t1 .chip { background: #f5f5f5; color: #666; border-color: #e0e0e0; }
+  .t1 .chip.active { background: #FF6B35; color: #fff; border-color: #FF6B35; }
+  .t1 .count { color: #1a1a1a; }
+  .t1 .card { background: #fff; border: 1px solid #eee; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .t1 .card-cat { color: #FF6B35; }
+  .t1 .card-title { color: #1a1a1a; }
+  .t1 .card-detail { color: #888; }
+  .t1 .card-footer { border-color: #f0f0f0; }
+  .t1 .card-cta { color: #FF6B35; }
+  .t1 .tab-bar { background: #fff; border-color: #eee; }
+  .t1 .tab { color: #aaa; }
+  .t1 .tab.active { color: #FF6B35; }
+
+  /* ============ THEME 2: Warm & Inviting ============ */
+  .t2 .screen { background: #FFF9F5; }
+  .t2 .header h2 { color: #2D1810; }
+  .t2 .chip { background: #FFF0E8; color: #8B6550; border-color: #F0D8C8; }
+  .t2 .chip.active { background: #E8593A; color: #fff; border-color: #E8593A; }
+  .t2 .count { color: #2D1810; }
+  .t2 .card { background: #FFFFFF; border: 1px solid #F0DDD0; box-shadow: 0 2px 8px rgba(139,101,80,0.08); }
+  .t2 .card-cat { color: #D4572A; }
+  .t2 .card-title { color: #2D1810; }
+  .t2 .card-detail { color: #9B7B6B; }
+  .t2 .card-detail .dot { background: #D4A574; }
+  .t2 .card-footer { border-color: #F5E8DF; }
+  .t2 .card-cta { color: #D4572A; }
+  .t2 .tab-bar { background: #FFF5EF; border-color: #F0DDD0; }
+  .t2 .tab { color: #C4A898; }
+  .t2 .tab.active { color: #E8593A; }
+
+  /* ============ THEME 3: Bold & Energetic ============ */
+  .t3 .screen { background: #F8F7FC; }
+  .t3 .header-gradient { background: linear-gradient(135deg, #FF6B35 0%, #FF8F5E 50%, #FFB347 100%); padding: 48px 16px 20px; border-radius: 0 0 24px 24px; }
+  .t3 .header-gradient h2 { color: #fff; font-size: 22px; font-weight: 800; }
+  .t3 .header-gradient .sub { color: rgba(255,255,255,0.85); font-size: 12px; margin-top: 2px; }
+  .t3 .chip { background: #fff; color: #666; border-color: #E8E5F0; }
+  .t3 .chip.active { background: #6C5CE7; color: #fff; border-color: #6C5CE7; }
+  .t3 .count { color: #2D2640; }
+  .t3 .card { background: #FFFFFF; border: 1px solid #EDE9F5; box-shadow: 0 2px 12px rgba(108,92,231,0.08); }
+  .t3 .card-cat { color: #6C5CE7; }
+  .t3 .card-title { color: #2D2640; }
+  .t3 .card-detail { color: #8B82A8; }
+  .t3 .card-detail .dot { background: #C4BBE5; }
+  .t3 .card-footer { border-color: #F0ECF8; }
+  .t3 .card-cta { color: #FF6B35; font-weight: 700; }
+  .t3 .tab-bar { background: #fff; border-color: #EDE9F5; }
+  .t3 .tab { color: #B8B0CC; }
+  .t3 .tab.active { color: #6C5CE7; }
+
+  /* ============ THEME 4: Hybrid (Warm + Gradient, No Purple) ============ */
+  .t4 .screen { background: #FFF9F5; }
+  .t4 .header-gradient { background: linear-gradient(135deg, #E8593A 0%, #FF6B35 40%, #FFB347 100%); padding: 48px 16px 20px; border-radius: 0 0 24px 24px; }
+  .t4 .header-gradient h2 { color: #fff; font-size: 22px; font-weight: 800; }
+  .t4 .header-gradient .sub { color: rgba(255,255,255,0.85); font-size: 12px; margin-top: 2px; }
+  .t4 .chip { background: #FFF0E8; color: #8B6550; border-color: #F0D8C8; }
+  .t4 .chip.active { background: #E8593A; color: #fff; border-color: #E8593A; }
+  .t4 .count { color: #2D1810; }
+  .t4 .card { background: #FFFFFF; border: 1px solid #F0DDD0; box-shadow: 0 2px 8px rgba(139,101,80,0.08); }
+  .t4 .card-cat { color: #D4572A; }
+  .t4 .card-title { color: #2D1810; }
+  .t4 .card-detail { color: #9B7B6B; }
+  .t4 .card-detail .dot { background: #D4A574; }
+  .t4 .card-footer { border-color: #F5E8DF; }
+  .t4 .card-cta { color: #E8593A; font-weight: 700; }
+  .t4 .tab-bar { background: #FFF5EF; border-color: #F0DDD0; }
+  .t4 .tab { color: #C4A898; }
+  .t4 .tab.active { color: #E8593A; }
+</style>
+</head>
+<body>
+<h1>Plus One - Final Two</h1>
+<div class="grid">
+
+<!-- THEME 3: Bold & Energetic -->
+<!-- THEME 3 -->
+<div>
+<div class="phone t3">
+<div class="screen">
+  <div class="header-gradient">
+    <h2>Discover</h2>
+    <div class="sub">Downtown Knoxville & UTK Campus</div>
+  </div>
+  <div class="filter-row" style="padding-top:12px">
+    <div class="chip active">All Events</div>
+    <div class="chip">Music</div>
+    <div class="chip">Sports</div>
+    <div class="chip">Nightlife</div>
+    <div class="chip">Food</div>
+  </div>
+  <div class="count">15 Upcoming Events</div>
+  <div class="card">
+    <div class="card-img img-park"></div>
+    <div class="card-body">
+      <div class="card-cat">CAMPUS</div>
+      <div class="card-title">Circle Park Frisbee & Hangout</div>
+      <div class="card-detail"><span class="dot"></span> Today at 7:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Circle Park Dr, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img img-music"></div>
+    <div class="card-body">
+      <div class="card-cat">MUSIC</div>
+      <div class="card-title">Friday Night Live on Market Square</div>
+      <div class="card-detail"><span class="dot"></span> Tomorrow at 8:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Market Square, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img img-library"></div>
+    <div class="card-body">
+      <div class="card-cat">STUDY</div>
+      <div class="card-title">UTK Study Break & Coffee Social</div>
+      <div class="card-detail"><span class="dot"></span> Today at 3:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Hodges Library, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="tab-bar">
+    <div class="tab active"><div class="tab-icon">&#9678;</div>Discover</div>
+    <div class="tab"><div class="tab-icon">&#10010;</div>Openings</div>
+    <div class="tab"><div class="tab-icon">&#9993;</div>Activity</div>
+    <div class="tab"><div class="tab-icon">&#9787;</div>Profile</div>
+  </div>
+</div>
+</div>
+<div class="phone-label">A. Bold & Energetic</div>
+</div>
+
+<!-- THEME 4: HYBRID -->
+<div>
+<div class="phone t4">
+<div class="screen">
+  <div class="header-gradient">
+    <h2>Discover</h2>
+    <div class="sub">Downtown Knoxville & UTK Campus</div>
+  </div>
+  <div class="filter-row" style="padding-top:12px">
+    <div class="chip active">All Events</div>
+    <div class="chip">Music</div>
+    <div class="chip">Sports</div>
+    <div class="chip">Nightlife</div>
+    <div class="chip">Food</div>
+  </div>
+  <div class="count">15 Upcoming Events</div>
+  <div class="card">
+    <div class="card-img img-park"></div>
+    <div class="card-body">
+      <div class="card-cat">CAMPUS</div>
+      <div class="card-title">Circle Park Frisbee & Hangout</div>
+      <div class="card-detail"><span class="dot"></span> Today at 7:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Circle Park Dr, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img img-music"></div>
+    <div class="card-body">
+      <div class="card-cat">MUSIC</div>
+      <div class="card-title">Friday Night Live on Market Square</div>
+      <div class="card-detail"><span class="dot"></span> Tomorrow at 8:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Market Square, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img img-library"></div>
+    <div class="card-body">
+      <div class="card-cat">STUDY</div>
+      <div class="card-title">UTK Study Break & Coffee Social</div>
+      <div class="card-detail"><span class="dot"></span> Today at 3:00 PM</div>
+      <div class="card-detail"><span class="dot"></span> Hodges Library, Knoxville, TN</div>
+      <div class="card-footer">
+        <span class="card-cta">View Details & Openings &#8250;</span>
+      </div>
+    </div>
+  </div>
+  <div class="tab-bar">
+    <div class="tab active"><div class="tab-icon">&#9678;</div>Discover</div>
+    <div class="tab"><div class="tab-icon">&#10010;</div>Openings</div>
+    <div class="tab"><div class="tab-icon">&#9993;</div>Activity</div>
+    <div class="tab"><div class="tab-icon">&#9787;</div>Profile</div>
+  </div>
+</div>
+</div>
+<div class="phone-label">B. Warm + Gradient (No Purple)</div>
+</div>
+
+</div>
+</body>
+</html>

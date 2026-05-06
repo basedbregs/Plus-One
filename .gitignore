@@ -1,0 +1,67 @@
+# Plus One — .gitignore
+
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native build outputs
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS
+.DS_Store
+*.pem
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Generated native folders
+/ios
+/android
+
+# Vercel
+.vercel/
+.turbo/
+
+# Env files (CRITICAL — never commit secrets)
+.env
+.env.*
+!.env.example
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Service-account / credential file patterns (defense in depth)
+*-key.json
+service-account*.json
+csb*.json
+ratclaw*.json
+
+# Local-only orchestrator working files
+.claude/settings.local.json

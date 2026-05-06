@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plus One — Logo Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: #FFF9F5; color: #2D1810; padding: 40px 20px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 28px; margin-bottom: 8px; font-weight: 800; }
+  .subtitle { color: #9B7B6B; margin-bottom: 32px; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .opt {
+    background: white; border-radius: 16px; padding: 32px 24px;
+    border: 1px solid #F0DDD0; text-align: center;
+    box-shadow: 0 2px 12px rgba(139,101,80,0.06);
+  }
+  .opt-label { font-size: 12px; font-weight: 700; color: #E8593A;
+              text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .opt-vibe { font-size: 13px; color: #9B7B6B; margin-top: 16px; line-height: 1.5; }
+  .opt-canvas {
+    background: #FFF0E8; border-radius: 12px; padding: 32px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 160px;
+  }
+  .opt-canvas.dark { background: #2D1810; }
+  .opt-canvas.cream { background: #FFF9F5; }
+
+  /* ====== LOGO 1: Solid Ticket ====== */
+  .ticket-1 {
+    background: #E8593A; color: white;
+    padding: 14px 28px; border-radius: 12px;
+    position: relative; font-weight: 900; font-size: 18px;
+    letter-spacing: 2px; box-shadow: 0 4px 16px rgba(232,89,58,0.3);
+  }
+  .ticket-1::before, .ticket-1::after {
+    content: ''; position: absolute; width: 16px; height: 16px;
+    background: #FFF0E8; border-radius: 50%; top: 50%; transform: translateY(-50%);
+  }
+  .ticket-1::before { left: -8px; }
+  .ticket-1::after { right: -8px; }
+
+  /* ====== LOGO 2: Outlined Ticket ====== */
+  .ticket-2 {
+    border: 3px solid #2D1810; color: #2D1810;
+    padding: 12px 26px; border-radius: 12px;
+    position: relative; font-weight: 900; font-size: 18px;
+    letter-spacing: 2px; background: transparent;
+  }
+  .ticket-2::before, .ticket-2::after {
+    content: ''; position: absolute; width: 14px; height: 14px;
+    background: #FFF9F5; border: 3px solid #2D1810;
+    border-radius: 50%; top: 50%; transform: translateY(-50%);
+  }
+  .ticket-2::before { left: -10px; }
+  .ticket-2::after { right: -10px; }
+
+  /* ====== LOGO 3: Vintage Stub ====== */
+  .ticket-3-wrap {
+    display: inline-flex; background: #FFE4D2;
+    border: 2px solid #2D1810; border-radius: 4px;
+    box-shadow: 4px 4px 0 #2D1810;
+    font-family: 'Georgia', serif;
+  }
+  .ticket-3-stub {
+    padding: 10px 14px; border-right: 2px dashed #2D1810;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    color: #2D1810; display: flex; align-items: center;
+  }
+  .ticket-3-main {
+    padding: 10px 20px; font-weight: 900; font-size: 18px;
+    letter-spacing: 2px; color: #2D1810;
+  }
+
+  /* ====== LOGO 4: Modern Pill Ticket ====== */
+  .ticket-4 {
+    background: #2D1810; color: #FFE4D2;
+    padding: 16px 32px; border-radius: 100px;
+    font-weight: 900; font-size: 20px;
+    letter-spacing: 4px; position: relative;
+    border: 2px solid #2D1810;
+  }
+  .ticket-4 .plus {
+    color: #E8593A; font-size: 24px; margin-right: 6px;
+  }
+
+  /* ====== LOGO 5: Minimal Notched ====== */
+  .ticket-5 {
+    background: linear-gradient(135deg, #E8593A 0%, #FFB347 100%);
+    color: white; padding: 18px 36px;
+    font-weight: 900; font-size: 20px; letter-spacing: 3px;
+    clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0 50%);
+  }
+
+  /* ====== LOGO 6: Stacked Premium ====== */
+  .ticket-6 {
+    background: white; border: 2px solid #2D1810;
+    padding: 12px 24px; text-align: center;
+    border-radius: 8px; position: relative;
+  }
+  .ticket-6::before, .ticket-6::after {
+    content: ''; position: absolute;
+    width: 100%; left: 0; height: 1px; background: #2D1810;
+  }
+  .ticket-6::before { top: 30%; opacity: 0.15; }
+  .ticket-6::after { bottom: 30%; opacity: 0.15; }
+  .ticket-6 .small {
+    font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    color: #9B7B6B; margin-bottom: 2px;
+  }
+  .ticket-6 .big {
+    font-weight: 900; font-size: 18px; letter-spacing: 2px;
+    color: #2D1810;
+  }
+  .ticket-6 .tiny {
+    font-size: 8px; color: #9B7B6B; letter-spacing: 1px; margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Plus One — Logo Options</h1>
+  <p class="subtitle">Ticket-shape variations. Pick a direction; I'll refine.</p>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <div class="opt">
+      <div class="opt-label">1. Bold Solid Ticket</div>
+      <div class="opt-canvas">
+        <div class="ticket-1">PLUS ONE</div>
+      </div>
+      <div class="opt-vibe">Punchy, confident, modern. Coral primary with cutouts. Best for app icon and marketing.</div>
+    </div>
+
+    <!-- 2 -->
+    <div class="opt">
+      <div class="opt-label">2. Outlined Ticket</div>
+      <div class="opt-canvas cream">
+        <div class="ticket-2">PLUS ONE</div>
+      </div>
+      <div class="opt-vibe">Clean, sophisticated, "members club" energy. Works on light backgrounds. Magazine-ish.</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="opt">
+      <div class="opt-label">3. Vintage Stub</div>
+      <div class="opt-canvas cream">
+        <div class="ticket-3-wrap">
+          <div class="ticket-3-stub">ADMIT<br>ONE</div>
+          <div class="ticket-3-main">PLUS ONE</div>
+        </div>
+      </div>
+      <div class="opt-vibe">Retro concert/movie ticket feel. Most literal interpretation of "ticket". Nostalgic + cool.</div>
+    </div>
+
+    <!-- 4 -->
+    <div class="opt">
+      <div class="opt-label">4. Premium Pill</div>
+      <div class="opt-canvas">
+        <div class="ticket-4"><span class="plus">+</span>PLUS ONE</div>
+      </div>
+      <div class="opt-vibe">Dark, mysterious, exclusive. The "Raya" energy. Coral plus sign as accent. Cocktail bar vibe.</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="opt">
+      <div class="opt-label">5. Notched Gradient</div>
+      <div class="opt-canvas">
+        <div class="ticket-5">PLUS ONE</div>
+      </div>
+      <div class="opt-vibe">True ticket-stub silhouette with the v-cuts. Energetic gradient. Festival-poster feel.</div>
+    </div>
+
+    <!-- 6 -->
+    <div class="opt">
+      <div class="opt-label">6. Stamped Stub</div>
+      <div class="opt-canvas cream">
+        <div class="ticket-6">
+          <div class="small">ADMIT</div>
+          <div class="big">PLUS ONE</div>
+          <div class="tiny">KNOXVILLE · NO. 001</div>
+        </div>
+      </div>
+      <div class="opt-vibe">Numbered, member-card aesthetic. Exclusive vibe. Looks like a credential. Could put user's member number on it.</div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:32px; color:#9B7B6B; font-size:13px; text-align:center;">
+    Tell me which direction you like. I can also mash up two or refine any of them.
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plus One — Logo Color Variants</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         background: #F5F5F5; color: #111; padding: 32px 16px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 26px; margin-bottom: 4px; font-weight: 800; }
+  .subtitle { color: #666; margin-bottom: 24px; font-size: 13px; }
+
+  .palette-headers {
+    display: grid;
+    grid-template-columns: 90px repeat(5, 1fr);
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 8px;
+  }
+  .ph-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; }
+  .ph-name { font-size: 13px; font-weight: 700; color: #111; text-align: center; }
+  .ph-desc { font-size: 10px; color: #999; text-align: center; margin-top: 2px; }
+
+  .logo-row {
+    display: grid;
+    grid-template-columns: 90px repeat(5, 1fr);
+    gap: 12px;
+    align-items: stretch;
+    margin-bottom: 12px;
+  }
+  .row-label {
+    display: flex; align-items: center;
+    font-size: 12px; font-weight: 800;
+    color: #444; padding: 0 8px;
+  }
+  .cell {
+    border-radius: 8px;
+    padding: 24px 12px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 120px;
+  }
+
+  /* === PALETTE A: Aesop (Cream + Forest) === */
+  .pa { background: #F4EDE0; }
+  .pa .t1 { background: #2F4630; color: #F4EDE0; }
+  .pa .t1::before, .pa .t1::after { background: #F4EDE0; }
+  .pa .t2 { border-color: #2F4630; color: #2F4630; }
+  .pa .t2::before, .pa .t2::after { background: #F4EDE0; border-color: #2F4630; }
+  .pa .t3-wrap { background: #E8DDC9; border-color: #2F4630; box-shadow: 4px 4px 0 #2F4630; }
+  .pa .t3-stub { color: #2F4630; border-right-color: #2F4630; }
+  .pa .t3-main { color: #2F4630; }
+  .pa .t4 { background: #2F4630; color: #F4EDE0; border-color: #2F4630; }
+  .pa .t4 .plus { color: #C8985A; }
+  .pa .t5 { background: linear-gradient(135deg, #2F4630 0%, #5A7050 100%); color: #F4EDE0; }
+  .pa .t6 { background: #FFF; border-color: #2F4630; }
+  .pa .t6 .small { color: #5A7050; }
+  .pa .t6 .big { color: #2F4630; }
+  .pa .t6 .tiny { color: #888; }
+
+  /* === PALETTE B: Equinox (Black + White) === */
+  .pb { background: #F5F5F5; }
+  .pb .t1 { background: #000; color: #FFF; }
+  .pb .t1::before, .pb .t1::after { background: #F5F5F5; }
+  .pb .t2 { border-color: #000; color: #000; }
+  .pb .t2::before, .pb .t2::after { background: #F5F5F5; border-color: #000; }
+  .pb .t3-wrap { background: #FFF; border-color: #000; box-shadow: 4px 4px 0 #000; }
+  .pb .t3-stub { color: #000; border-right-color: #000; }
+  .pb .t3-main { color: #000; }
+  .pb .t4 { background: #000; color: #FFF; border-color: #000; }
+  .pb .t4 .plus { color: #FFF; }
+  .pb .t5 { background: #000; color: #FFF; }
+  .pb .t6 { background: #FFF; border-color: #000; }
+  .pb .t6 .small { color: #666; }
+  .pb .t6 .big { color: #000; }
+  .pb .t6 .tiny { color: #888; }
+
+  /* === PALETTE C: Partiful (Dark + Neon) === */
+  .pc { background: #0A0A0F; }
+  .pc .t1 { background: #00FF88; color: #0A0A0F; box-shadow: 0 0 24px rgba(0,255,136,0.4); }
+  .pc .t1::before, .pc .t1::after { background: #0A0A0F; }
+  .pc .t2 { border-color: #00FF88; color: #00FF88; }
+  .pc .t2::before, .pc .t2::after { background: #0A0A0F; border-color: #00FF88; }
+  .pc .t3-wrap { background: #1A1A22; border-color: #00FF88; box-shadow: 4px 4px 0 #00FF88; }
+  .pc .t3-stub { color: #00FF88; border-right-color: #00FF88; }
+  .pc .t3-main { color: #00FF88; }
+  .pc .t4 { background: #1A1A22; color: #FFF; border-color: #1A1A22; }
+  .pc .t4 .plus { color: #00FF88; }
+  .pc .t5 { background: linear-gradient(135deg, #00FF88 0%, #00D9FF 100%); color: #0A0A0F; }
+  .pc .t6 { background: #1A1A22; border-color: #00FF88; }
+  .pc .t6 .small { color: #888; }
+  .pc .t6 .big { color: #FFF; }
+  .pc .t6 .tiny { color: #666; }
+
+  /* === PALETTE D: Editorial (Black + Gold) === */
+  .pd { background: #111; }
+  .pd .t1 { background: #C8985A; color: #111; }
+  .pd .t1::before, .pd .t1::after { background: #111; }
+  .pd .t2 { border-color: #C8985A; color: #C8985A; }
+  .pd .t2::before, .pd .t2::after { background: #111; border-color: #C8985A; }
+  .pd .t3-wrap { background: #1F1F1F; border-color: #C8985A; box-shadow: 4px 4px 0 #C8985A; }
+  .pd .t3-stub { color: #C8985A; border-right-color: #C8985A; }
+  .pd .t3-main { color: #C8985A; }
+  .pd .t4 { background: #1F1F1F; color: #FFF; border-color: #C8985A; }
+  .pd .t4 .plus { color: #C8985A; }
+  .pd .t5 { background: linear-gradient(135deg, #C8985A 0%, #E5C589 100%); color: #111; }
+  .pd .t6 { background: #1F1F1F; border-color: #C8985A; }
+  .pd .t6 .small { color: #C8985A; }
+  .pd .t6 .big { color: #FFF; }
+  .pd .t6 .tiny { color: #888; }
+
+  /* === PALETTE E: Headspace (Cream + Coral) — original control === */
+  .pe { background: #FFF9F5; }
+  .pe .t1 { background: #E8593A; color: #FFF; }
+  .pe .t1::before, .pe .t1::after { background: #FFF9F5; }
+  .pe .t2 { border-color: #2D1810; color: #2D1810; }
+  .pe .t2::before, .pe .t2::after { background: #FFF9F5; border-color: #2D1810; }
+  .pe .t3-wrap { background: #FFE4D2; border-color: #2D1810; box-shadow: 4px 4px 0 #2D1810; }
+  .pe .t3-stub { color: #2D1810; border-right-color: #2D1810; }
+  .pe .t3-main { color: #2D1810; }
+  .pe .t4 { background: #2D1810; color: #FFE4D2; border-color: #2D1810; }
+  .pe .t4 .plus { color: #E8593A; }
+  .pe .t5 { background: linear-gradient(135deg, #E8593A 0%, #FFB347 100%); color: #FFF; }
+  .pe .t6 { background: #FFF; border-color: #2D1810; }
+  .pe .t6 .small { color: #9B7B6B; }
+  .pe .t6 .big { color: #2D1810; }
+  .pe .t6 .tiny { color: #888; }
+
+  /* === LOGO SHAPES (shared) === */
+  .t1 { padding: 12px 22px; border-radius: 10px; position: relative; font-weight: 900; font-size: 14px; letter-spacing: 1.5px; }
+  .t1::before, .t1::after { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 50%; top: 50%; transform: translateY(-50%); }
+  .t1::before { left: -7px; }
+  .t1::after { right: -7px; }
+
+  .t2 { border: 2.5px solid; padding: 10px 20px; border-radius: 10px; position: relative; font-weight: 900; font-size: 14px; letter-spacing: 1.5px; background: transparent; }
+  .t2::before, .t2::after { content: ''; position: absolute; width: 12px; height: 12px; border: 2.5px solid; border-radius: 50%; top: 50%; transform: translateY(-50%); }
+  .t2::before { left: -8px; }
+  .t2::after { right: -8px; }
+
+  .t3-wrap { display: inline-flex; border: 2px solid; border-radius: 4px; font-family: 'Georgia', serif; }
+  .t3-stub { padding: 8px 10px; border-right: 2px dashed; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; line-height: 1.1; }
+  .t3-main { padding: 8px 14px; font-weight: 900; font-size: 14px; letter-spacing: 1.5px; }
+
+  .t4 { padding: 12px 24px; border-radius: 100px; font-weight: 900; font-size: 14px; letter-spacing: 3px; border: 2px solid; }
+  .t4 .plus { font-size: 18px; margin-right: 4px; }
+
+  .t5 { padding: 14px 28px; font-weight: 900; font-size: 14px; letter-spacing: 2px; clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0 50%); }
+
+  .t6 { border: 2px solid; padding: 8px 18px; text-align: center; border-radius: 6px; }
+  .t6 .small { font-size: 7px; font-weight: 700; letter-spacing: 2px; margin-bottom: 1px; }
+  .t6 .big { font-weight: 900; font-size: 14px; letter-spacing: 1.5px; }
+  .t6 .tiny { font-size: 6px; letter-spacing: 0.8px; margin-top: 1px; }
+
+  .key { background: white; border-radius: 12px; padding: 16px; margin-top: 24px; font-size: 12px; color: #555; line-height: 1.6; }
+  .key b { color: #111; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Plus One — Same 6 Logos, 5 Color Palettes</h1>
+  <p class="subtitle">Each row = one logo style. Each column = one color palette. Tell me which cell hits.</p>
+
+  <div class="palette-headers">
+    <div class="ph-label">SHAPE</div>
+    <div><div class="ph-name">A · Forest</div><div class="ph-desc">Aesop, woodsy, premium</div></div>
+    <div><div class="ph-name">B · Mono</div><div class="ph-desc">Equinox, pure b/w</div></div>
+    <div><div class="ph-name">C · Neon</div><div class="ph-desc">Partiful, electric</div></div>
+    <div><div class="ph-name">D · Gold</div><div class="ph-desc">Editorial, luxe</div></div>
+    <div><div class="ph-name">E · Coral</div><div class="ph-desc">Original (control)</div></div>
+  </div>
+
+  <!-- LOGO 1 -->
+  <div class="logo-row">
+    <div class="row-label">1. Solid<br>Ticket</div>
+    <div class="cell pa"><div class="t1">PLUS ONE</div></div>
+    <div class="cell pb"><div class="t1">PLUS ONE</div></div>
+    <div class="cell pc"><div class="t1">PLUS ONE</div></div>
+    <div class="cell pd"><div class="t1">PLUS ONE</div></div>
+    <div class="cell pe"><div class="t1">PLUS ONE</div></div>
+  </div>
+
+  <!-- LOGO 2 -->
+  <div class="logo-row">
+    <div class="row-label">2. Outlined<br>Ticket</div>
+    <div class="cell pa"><div class="t2">PLUS ONE</div></div>
+    <div class="cell pb"><div class="t2">PLUS ONE</div></div>
+    <div class="cell pc"><div class="t2">PLUS ONE</div></div>
+    <div class="cell pd"><div class="t2">PLUS ONE</div></div>
+    <div class="cell pe"><div class="t2">PLUS ONE</div></div>
+  </div>
+
+  <!-- LOGO 3 -->
+  <div class="logo-row">
+    <div class="row-label">3. Vintage<br>Stub</div>
+    <div class="cell pa"><div class="t3-wrap"><div class="t3-stub">ADMIT<br>ONE</div><div class="t3-main">PLUS ONE</div></div></div>
+    <div class="cell pb"><div class="t3-wrap"><div class="t3-stub">ADMIT<br>ONE</div><div class="t3-main">PLUS ONE</div></div></div>
+    <div class="cell pc"><div class="t3-wrap"><div class="t3-stub">ADMIT<br>ONE</div><div class="t3-main">PLUS ONE</div></div></div>
+    <div class="cell pd"><div class="t3-wrap"><div class="t3-stub">ADMIT<br>ONE</div><div class="t3-main">PLUS ONE</div></div></div>
+    <div class="cell pe"><div class="t3-wrap"><div class="t3-stub">ADMIT<br>ONE</div><div class="t3-main">PLUS ONE</div></div></div>
+  </div>
+
+  <!-- LOGO 4 -->
+  <div class="logo-row">
+    <div class="row-label">4. Premium<br>Pill</div>
+    <div class="cell pa"><div class="t4"><span class="plus">+</span>PLUS ONE</div></div>
+    <div class="cell pb"><div class="t4"><span class="plus">+</span>PLUS ONE</div></div>
+    <div class="cell pc"><div class="t4"><span class="plus">+</span>PLUS ONE</div></div>
+    <div class="cell pd"><div class="t4"><span class="plus">+</span>PLUS ONE</div></div>
+    <div class="cell pe"><div class="t4"><span class="plus">+</span>PLUS ONE</div></div>
+  </div>
+
+  <!-- LOGO 5 -->
+  <div class="logo-row">
+    <div class="row-label">5. Notched<br>Gradient</div>
+    <div class="cell pa"><div class="t5">PLUS ONE</div></div>
+    <div class="cell pb"><div class="t5">PLUS ONE</div></div>
+    <div class="cell pc"><div class="t5">PLUS ONE</div></div>
+    <div class="cell pd"><div class="t5">PLUS ONE</div></div>
+    <div class="cell pe"><div class="t5">PLUS ONE</div></div>
+  </div>
+
+  <!-- LOGO 6 -->
+  <div class="logo-row">
+    <div class="row-label">6. Stamped<br>Stub</div>
+    <div class="cell pa"><div class="t6"><div class="small">ADMIT</div><div class="big">PLUS ONE</div><div class="tiny">KNOXVILLE · NO. 001</div></div></div>
+    <div class="cell pb"><div class="t6"><div class="small">ADMIT</div><div class="big">PLUS ONE</div><div class="tiny">KNOXVILLE · NO. 001</div></div></div>
+    <div class="cell pc"><div class="t6"><div class="small">ADMIT</div><div class="big">PLUS ONE</div><div class="tiny">KNOXVILLE · NO. 001</div></div></div>
+    <div class="cell pd"><div class="t6"><div class="small">ADMIT</div><div class="big">PLUS ONE</div><div class="tiny">KNOXVILLE · NO. 001</div></div></div>
+    <div class="cell pe"><div class="t6"><div class="small">ADMIT</div><div class="big">PLUS ONE</div><div class="tiny">KNOXVILLE · NO. 001</div></div></div>
+  </div>
+
+  <div class="key">
+    <b>How to pick:</b> Tell me a row + a column. Like "5C" (notched gradient + neon) or "6D" (stamped stub + gold).
+    <br>I'll then iterate further on the winning combo and apply it across the whole app.
+  </div>
+</div>
+</body>
+</html>
