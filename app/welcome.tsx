@@ -57,16 +57,16 @@ export default function Welcome() {
       {/* Hero */}
       <View style={styles.hero}>
         <View style={styles.heroBadge}>
-          <Text style={styles.heroBadgeText}>KNOXVILLE · INVITE WELCOMED</Text>
+          <Text style={styles.heroBadgeText}>KNOXVILLE · REAL HUMANS ONLY</Text>
         </View>
         <View style={styles.heroLogo}>
           <Text style={styles.logoPlus}>+</Text>
           <Text style={styles.logoText}>PLUS ONE</Text>
         </View>
-        <Text style={styles.heroTitle}>The room your city's been missing.</Text>
+        <Text style={styles.heroTitle}>Knoxville. No bots. No fakes.</Text>
         <Text style={styles.heroSubtitle}>
-          Knoxville's most curated circle for live music, sport nights, food finds, and the
-          people worth showing up with.
+          Real people, real events, real plans. Find what's happening tonight and the
+          person worth going with.
         </Text>
 
         <View style={styles.heroActions}>
@@ -74,17 +74,17 @@ export default function Welcome() {
             style={styles.primaryButton}
             onPress={() => router.push('/(auth)/sign-up')}
           >
-            <Text style={styles.primaryButtonText}>Apply for Access</Text>
+            <Text style={styles.primaryButtonText}>Sign Up</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.secondaryButton}
             onPress={() => router.push('/(auth)/sign-in')}
           >
-            <Text style={styles.secondaryButtonText}>I'm a Member</Text>
+            <Text style={styles.secondaryButtonText}>Sign In</Text>
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.previewLabel}>A glimpse at this week ↓</Text>
+        <Text style={styles.previewLabel}>What's happening this week ↓</Text>
       </View>
 
       {/* What is Plus One? */}
@@ -96,10 +96,11 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>01</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>Curated, not crowdsourced</Text>
+            <Text style={styles.pitchHeader}>Every account is a real human</Text>
             <Text style={styles.pitchBody}>
-              Every Knoxville event worth your night — pulled, filtered, ranked. No dead
-              listings. No spam. No noise.
+              UTK email, neighboring-college email, in-person sign-up at a partner venue,
+              or three linked socials. Pick the path that fits — we just need to know you're
+              you.
             </Text>
           </View>
         </View>
@@ -109,10 +110,10 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>02</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>Find your +1, not your match</Text>
+            <Text style={styles.pitchHeader}>Find your +1</Text>
             <Text style={styles.pitchBody}>
-              Spare ticket? Looking for a tailgate buddy? Post the opening. The right person
-              shows up — verified, vouched for, real.
+              Spare ticket? Hate going alone? Post a +1 opening. Real Knoxvillians reach
+              out. Pick the one whose vibe fits and meet up.
             </Text>
           </View>
         </View>
@@ -122,10 +123,10 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>03</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>People who actually show up</Text>
+            <Text style={styles.pitchHeader}>Built to help you leave the app</Text>
             <Text style={styles.pitchBody}>
-              Every member is ID-verified and linked to their socials. Flake on a +1, lose
-              your spot. Simple as that.
+              No infinite feeds. No streaks. No "you have 3 hot matches expiring." Plus One
+              shows you what's happening, helps you make a plan, and gets out of your way.
             </Text>
           </View>
         </View>
@@ -190,19 +191,19 @@ export default function Welcome() {
 
       {/* CTA bottom */}
       <View style={styles.bottomCta}>
-        <Text style={styles.bottomCtaTitle}>Ready to come in?</Text>
+        <Text style={styles.bottomCtaTitle}>Sign up like a person.</Text>
         <Text style={styles.bottomCtaSubtitle}>
-          Plus One is free during our Knoxville rollout. No swiping. No flakes. Just the
-          people you actually want to spend a night with.
+          Free during the Knoxville rollout. Verify once, hang with real people, find your
+          +1, and go do something tonight.
         </Text>
         <TouchableOpacity
           style={[styles.primaryButton, { width: '100%', marginTop: 12 }]}
           onPress={() => router.push('/(auth)/sign-up')}
         >
-          <Text style={styles.primaryButtonText}>Apply for Access</Text>
+          <Text style={styles.primaryButtonText}>Sign Up</Text>
         </TouchableOpacity>
         <Text style={styles.bottomCtaFinePrint}>
-          New members are admitted weekly. Your application takes 2 minutes.
+          UTK email · Neighboring-college email · In-person at a partner venue · 3 linked socials
         </Text>
       </View>
     </ScrollView>
