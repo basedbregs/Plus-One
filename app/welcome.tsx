@@ -63,11 +63,11 @@ export default function Welcome() {
           <Text style={styles.logoPlus}>+</Text>
           <Text style={styles.logoText}>PLUS ONE</Text>
         </View>
-        <Text style={styles.heroTitle}>What if your city had a brain?</Text>
+        <Text style={styles.heroTitle}>The social media for Knoxville.</Text>
         <Text style={styles.heroSubtitle}>
-          Facebook without the noise. Tinder without the wasted swipes. LinkedIn that
-          doesn't take itself too seriously. VisitKnoxville that actually knows you. Real
-          Knoxvillians, real spots, and a killer app that connects them like never before.
+          Everything you already use — Facebook, Tinder, Reddit, your local concierge —
+          built for here, built around real people, and built to actually respect your
+          time. A killer app that connects them like never before.
         </Text>
 
         <View style={styles.heroActions}>
@@ -97,11 +97,11 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>01</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>Every account is a real human</Text>
+            <Text style={styles.pitchHeader}>Imagine if Facebook ditched the ads, bots, and privacy concerns</Text>
             <Text style={styles.pitchBody}>
-              UTK email, neighboring-college email, in-person sign-up at a partner venue,
-              or three linked socials. Pick the path that fits — we just need to know you're
-              you.
+              Every account is a real Knoxvillian — verified through UTK email, a
+              neighboring college, an in-person sign-up at a partner venue, or three linked
+              socials. No fake accounts. No ad targeting on your data. Just real people.
             </Text>
           </View>
         </View>
@@ -111,10 +111,10 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>02</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>Find your +1</Text>
+            <Text style={styles.pitchHeader}>What if Tinder respected your time and money?</Text>
             <Text style={styles.pitchBody}>
-              Spare ticket? Hate going alone? Post a +1 opening. Real Knoxvillians reach
-              out. Pick the one whose vibe fits and meet up.
+              No paywalls between you and a real match. No swipe gauntlets that go nowhere.
+              Match around real events, real plans, real spots — and meet in person fast.
             </Text>
           </View>
         </View>
@@ -124,12 +124,12 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>03</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>An AI trained on Knoxville</Text>
+            <Text style={styles.pitchHeader}>What if a site planned your whole night out — where AND who?</Text>
             <Text style={styles.pitchBody}>
-              The killer app: a frontier-level AI that knows every venue, every event,
-              every special, every hidden corner of Knoxville. Ask it where to take your
-              parents, what's open late on a Wednesday, or how to spend a free Saturday —
-              it knows.
+              The killer app: a frontier-level AI trained on every block of Knoxville. It
+              knows the venues, the events, the specials, the vibe — and it knows the
+              people. Ask it where to take your parents or how to spend a free Saturday.
+              It plans the night and finds your +1.
             </Text>
           </View>
         </View>
@@ -139,10 +139,11 @@ export default function Welcome() {
             <Text style={styles.pitchNum}>04</Text>
           </View>
           <View style={styles.pitchTextWrap}>
-            <Text style={styles.pitchHeader}>Built to help you leave the app</Text>
+            <Text style={styles.pitchHeader}>What if Reddit had subreddits for niche Knoxville communities?</Text>
             <Text style={styles.pitchBody}>
-              No infinite feeds. No streaks. No "3 hot matches expiring soon." Plus One
-              shows you what's happening, helps you make a plan, and gets out of your way.
+              Channels for everything — Vols tailgating, the Old City scene, the food
+              spots locals don't tell you about, study groups, run clubs, Greek life,
+              weekly trivia regulars. Find the corner of Knoxville that's yours.
             </Text>
           </View>
         </View>
